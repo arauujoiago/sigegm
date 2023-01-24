@@ -1,0 +1,52 @@
+<div class="page-content">
+  <div class="content-wrapper">
+    <div class="content-inner">
+      <div class="flex-column justify-content-center align-items-center content d-flex" style="height: 800px">
+        <form class="login-form" [formGroup]="loginForm" (ngSubmit)="aoEnviar()">
+          <div class="card mb-0">
+            <div class="card-body">
+              <div class="text-center mb-3">
+                <img class="mb-2" src="./assets/img/logo.svg" style="height: 250px;">
+                <h5 class="mb-0">Entrar na sua conta</h5>
+                <span class="d-block text-muted">Digite suas credenciais abaixo</span>
+              </div>
+
+              <div class="form-group form-group-feedback form-group-feedback-left">
+                <input formControlName="usuario" type="text" class="form-control" placeholder="Usuário"
+                       [ngClass]="{'border-danger': this.credenciaisInvalidas}">
+                <div class="form-control-feedback">
+                  <i class="icon-user text-muted"></i>
+                </div>
+              </div>
+
+              <div class="form-group form-group-feedback form-group-feedback-left">
+                <input formControlName="senha" type="password" class="form-control" placeholder="Senha"
+                       [ngClass]="{'border-danger': this.credenciaisInvalidas}">
+                <div class="form-control-feedback">
+                  <i class="icon-lock2 text-muted"></i>
+                </div>
+              </div>
+              <div class="alert alert-danger" *ngIf="credenciaisInvalidas">
+                As credenciais digitadas são inválidas.
+              </div>
+              <div class="text-right small">
+                <a href="/recuperar-senha">
+                  <p>Esqueceu sua senha?</p>
+                </a>
+              </div>
+              <div class="form-group text-center">
+                <button class="btn btn-default btn-round">Login</button>
+              </div>
+              <div class="text-center small">
+                <a href="/cadastro">
+                  <p>Não tem conta? Cadastre-se</p>
+                </a>
+              </div>
+            </div>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>

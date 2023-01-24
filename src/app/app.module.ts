@@ -1,16 +1,41 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {NgModule} from '@angular/core';
+import {RouterModule} from '@angular/router';
+import {ToastrModule} from "ngx-toastr";
 
-import { AppComponent } from './app.component';
+import {SidebarModule} from './sidebar/sidebar.module';
+import {FooterModule} from './shared/footer/footer.module';
+import {NavbarModule} from './shared/navbar/navbar.module';
+import {FixedPluginModule} from './shared/fixedplugin/fixedplugin.module';
+
+import {AppComponent} from './app.component';
+import {AppRoutes} from './app.routing';
+
+import {AdminLayoutComponent} from './layouts/admin-layout/admin-layout.component';
+import {ReactiveFormsModule} from "@angular/forms";
+import {TooltipModule} from "ngx-bootstrap/tooltip";
+import {ModalModule} from "ngx-bootstrap/modal";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AdminLayoutComponent
   ],
   imports: [
-    BrowserModule
+    BrowserAnimationsModule,
+    RouterModule.forRoot(AppRoutes, {
+      useHash: true
+    }),
+    ModalModule.forRoot(),
+    SidebarModule,
+    NavbarModule,
+    ToastrModule.forRoot(),
+    FooterModule,
+    FixedPluginModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

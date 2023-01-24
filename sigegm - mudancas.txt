@@ -1,0 +1,11 @@
+- Remover adicionar nova escala | usuário comum.
+- Adicionar botão que indica pendencia de solicitação de permuta.
+- Remover estoque | usuário comum.
+- Remover movimentações | usuário comum.
+- Remover botão solicitar permuta e adicionar botão editar na tela de escala | Admin.
+- Adicionar Noty de sucesso nas telas de ações.
+- Remover Dashboard
+- Alterar nome da Caixa de Entrada para ???
+- Padronizar nomes dos usuários para GM...
+
+Criar formulários: Escala, Estoque e Movimentações

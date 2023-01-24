@@ -1,0 +1,94 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <h4 class="card-title">Caixa de Entrada</h4>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive overflow-hidden">
+          <table class="table">
+            <thead class="text-primary">
+            <th>
+              Solicitante
+            </th>
+            <th>
+              Escala solicitante
+            </th>
+            <th>
+              Guarda
+            </th>
+            <th>
+              Escala guarda
+            </th>
+            <th>
+              Ações
+            </th>
+            </thead>
+            <tbody>
+            <tr>
+              <td>
+                Julio
+              </td>
+              <td>
+                02/01/2023
+              </td>
+              <td>
+                Mário
+              </td>
+              <td>
+                01/01/2023
+              </td>
+              <td>
+                <ng-container *ngTemplateOutlet="acoesCompletasTemplate"></ng-container>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Amanda
+              </td>
+              <td>
+                02/01/2023
+              </td>
+              <td>
+                Luiz
+              </td>
+              <td>
+                01/01/2023
+              </td>
+              <td>
+                <ng-container *ngTemplateOutlet="acoesCompletasTemplate"></ng-container>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Carlos
+              </td>
+              <td>
+                01/01/2023
+              </td>
+              <td>
+                Pedro
+              </td>
+              <td>
+                03/01/2023
+              </td>
+              <td>
+                <ng-container *ngTemplateOutlet="acoesCompletasTemplate"></ng-container>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #acoesCompletasTemplate>
+  <button type="button" class="btn btn-success btn-icon" (click)="aceitarPermuta()" ngbTooltip="Aceitar">
+    <i class="nc-icon nc-check-2"></i>
+  </button>
+  <button type="button" class="btn btn-danger btn-icon ml-2" (click)="recusarPermuta()" ngbTooltip="Recusar">
+    <i class="nc-icon nc-simple-remove"></i>
+  </button>
+</ng-template>

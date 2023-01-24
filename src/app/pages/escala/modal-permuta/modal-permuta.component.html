@@ -1,0 +1,39 @@
+<div class="modal-header">
+  <h5 class="modal-title">Solicitar Permuta</h5>
+  <button (click)="fechar()" type="button" class="close" data-dismiss="modal">×</button>
+</div>
+
+<form class="form">
+  <div class="modal-body">
+    <div class="row">
+      <div class="col-12 mb-3">
+        <label class="form-label" for="selectSolicitante">Solicitante:</label>
+        <select [disabled]="perfil == 'comum'" class="form-select" id="selectSolicitante" #selectSolicitante>
+          <option selected>{{perfil == 'comum' ? usuario : 'Selecione um usuário'}}</option>
+          <ng-container *ngIf="perfil == 'admin'">
+            <option>Pedro</option>
+            <option>José</option>
+            <option>Arthur</option>
+            <option>Julio</option>
+            <option>Amanda</option>
+          </ng-container>
+
+
+        </select>
+      </div>
+      <div class="col-12">
+        <label class="form-label" for="selectDestinatario">Guarda: </label>
+        <select class="form-select" id="selectDestinatario" #selectDestinatario>
+          <option value="0" selected>Selecione um guarda</option>
+          <option value="1">Mário</option>
+          <option value="2">Luiz</option>
+          <option value="3">Carlos</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" (click)="fechar()" class="btn btn-light" data-dismiss="modal">Cancelar</button>
+    <button type="submit" (click)="fechar()" class="btn btn-primary ml-2" [disabled]="selectDestinatario.value == 0 || selectSolicitante.value == 'Selecione um usuário'">Solicitar</button>
+  </div>
+</form>

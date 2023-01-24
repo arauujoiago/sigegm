@@ -1,0 +1,99 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header header-elements-inline">
+        <h4 class="card-title">Escala</h4>
+        <div class="header-elements" style="cursor: pointer">
+          <p class="breadcrumb-elements-item" routerLink="/adicionar">
+            <i class="nc-icon nc-simple-add mr-2"></i>
+            Adicionar nova escala
+          </p>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive overflow-hidden">
+          <table class="table">
+            <thead class="text-primary">
+            <th>
+              Guarda(s)
+            </th>
+            <th>
+              Local
+            </th>
+            <th>
+              Dia
+            </th>
+            <th>
+              Ações
+            </th>
+            </thead>
+            <tbody>
+            <tr>
+              <td>
+                Pedro, José, Arthur
+              </td>
+              <td>
+                Guarita A
+              </td>
+              <td>
+                03/01/2023
+              </td>
+              <td>
+                <ng-container *ngTemplateOutlet="perfil == 'comum' ? acoesDetalharTemplate : acoesCompletasTemplate"></ng-container>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Julio, Amanda
+              </td>
+              <td>
+                Guarita B
+              </td>
+              <td>
+                02/01/2023
+              </td>
+              <td>
+                <ng-container *ngTemplateOutlet="acoesCompletasTemplate"></ng-container>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Mário, Luiz, Carlos
+              </td>
+              <td>
+                Guarita A
+              </td>
+              <td>
+                01/01/2023
+              </td>
+              <td>
+                <ng-container *ngTemplateOutlet="acoesCompletasTemplate"></ng-container>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #acoesCompletasTemplate>
+  <button type="button" class="btn btn-dark btn-icon" ngbTooltip="Detalhes">
+    <i class="nc-icon nc-zoom-split"></i>
+  </button>
+  <button type="button" class="btn btn-info btn-icon ml-2" (click)="abrirModalPermuta()" ngbTooltip="Solicitar Permuta">
+    <i class="nc-icon nc-refresh-69"></i>
+  </button>
+</ng-template>
+
+<ng-template #acoesDetalharTemplate>
+  <button type="button" class="btn btn-dark btn-icon" ngbTooltip="Detalhes">
+    <i class="nc-icon nc-zoom-split"></i>
+  </button>
+</ng-template>
+
+<ng-template #modalPermuta>
+  <modal-permuta-cmp [modalRef]="modalRef">
+  </modal-permuta-cmp>
+</ng-template>
